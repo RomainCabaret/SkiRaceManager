@@ -1,0 +1,1 @@
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Release\SkiRaceManager.csproj.AssemblyReference.cache
