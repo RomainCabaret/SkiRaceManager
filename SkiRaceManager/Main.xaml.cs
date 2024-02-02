@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace SkiRaceManager
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Main.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Main : Page
     {
-        public MainWindow()
+        public Main()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Home home = new Home();
-            home.Show();
-            this.Close();
         }
     }
 }

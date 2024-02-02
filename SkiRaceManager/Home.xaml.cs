@@ -23,5 +23,17 @@ namespace SkiRaceManager
         {
             InitializeComponent();
         }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+
+            homeFrame.Navigate(new Main());
+        }
+
+        private void btnParticipation_Click(object sender, RoutedEventArgs e)
+        {
+            homeFrame.Navigate(new Participation());
+
+        }
     }
 }

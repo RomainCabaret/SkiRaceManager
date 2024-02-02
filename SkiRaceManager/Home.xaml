@@ -19,9 +19,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        <materialDesign:Card Padding="32" Margin="213,117,132,116" Grid.Column="1">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
-        </materialDesign:Card>
+        <Frame Grid.Column="1" Name="homeFrame" Source="Main.xaml" NavigationUIVisibility="Hidden"></Frame>
         <Grid Grid.Column="0" Background="#2C2D30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
@@ -29,12 +27,23 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="1">
-                <Border CornerRadius="10" BorderThickness="5" Background="#39393D" >
-                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
-                        <materialDesign:PackIcon Kind="Home" Margin="0 0 5 0" Width="30" Height="Auto"/>
-                        <TextBlock FontSize="24">Accueil</TextBlock>
-                    </StackPanel>
-                </Border>
+                <Button x:Name="btnHome" Click="btnHome_Click" Background="Transparent">
+                    <Border CornerRadius="10" BorderThickness="5" Background="#39393D" >
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
+                            <materialDesign:PackIcon Kind="Home" Margin="0 0 5 0" Width="30" Height="Auto"/>
+                            <TextBlock FontSize="24">Accueil</TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Button>
+                <Button x:Name="btnParticipation" Click="btnParticipation_Click" Background="Transparent">
+                    <Border CornerRadius="10" BorderThickness="5" Background="#39393D" >
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
+                            <materialDesign:PackIcon Kind="Home" Margin="0 0 5 0" Width="30" Height="Auto"/>
+                            <TextBlock FontSize="24">Accueil</TextBlock>
+                        </StackPanel>
+                    </Border>
+                    
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>
