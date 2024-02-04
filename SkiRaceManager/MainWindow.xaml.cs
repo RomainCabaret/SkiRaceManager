@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiRaceManager.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,25 @@ namespace SkiRaceManager
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Home home = new Home();
-            home.Show();
-            this.Close();
+            try
+            {
+                if (LoginViewModel.ConnectUser(inputLogin.Text, inputPassword.Password.ToString()))
+                {
+                    Home home = new Home();
+                    home.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Identification échoué");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("La base de données semble avoir un probleme");
+            }
         }
     }
 }

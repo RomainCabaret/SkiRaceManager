@@ -23,11 +23,11 @@
                     
                 </StackPanel>
 
-                 <TextBox TextWrapping="Wrap"  Width="120"/>
+                <TextBox x:Name="inputLogin" TextWrapping="Wrap" Width="120"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Home" Margin="0 0 5 0" Width="30" Height="Auto"/>
-                <PasswordBox Width="120"/>
+                <PasswordBox x:Name="inputPassword" Width="120"/>
             </StackPanel>
             <Button Content="Button" Click="Button_Click"/>
 

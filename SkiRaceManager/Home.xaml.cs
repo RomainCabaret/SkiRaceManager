@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SkiRaceManager.Models;
+using SkiRaceManager.ViewModels.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,21 +21,25 @@ namespace SkiRaceManager
     /// </summary>
     public partial class Home : Window
     {
+        private static string rank = Account.Rank;
         public Home()
         {
             InitializeComponent();
+            if(rank.ToLower() == "admin")
+            {
+                btnModeration.Visibility = Visibility.Visible;
+            }
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
 
-            homeFrame.Navigate(new Main());
+            homeFrame.Navigate(new HomeViewModel());
         }
 
         private void btnParticipation_Click(object sender, RoutedEventArgs e)
         {
             homeFrame.Navigate(new Participation());
-
         }
     }
 }
