@@ -30,6 +30,7 @@ namespace SkiRaceManager.ViewModels
                     {
                         Account.Id = int.Parse(reader["id"].ToString());
                         Account.Login = reader["login"].ToString();
+                        Account.Password = reader["password"].ToString();
                         Account.ProfilePicture = reader["profilePicture"].ToString();
                         Account.Rank = reader["rank"].ToString();
                         return true;

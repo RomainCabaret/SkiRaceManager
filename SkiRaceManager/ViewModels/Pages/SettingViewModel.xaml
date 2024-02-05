@@ -1,0 +1,78 @@
+﻿<Page x:Class="SkiRaceManager.ViewModels.Pages.SettingViewModel"
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+TextElement.FontWeight="Regular"
+TextElement.FontSize="13"
+TextOptions.TextFormattingMode="Ideal"
+TextOptions.TextRenderingMode="Auto"
+Background="#212024"
+FontFamily="{DynamicResource MaterialDesignFont}"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:local="clr-namespace:SkiRaceManager"
+   mc:Ignorable="d" d:DesignHeight="223.584">
+
+    <Grid Margin="20">
+        <Grid VerticalAlignment="Top" Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!-- Colonne pour le TextBlock -->
+                <ColumnDefinition Width="*"/>
+                <!-- Colonne pour l'espace entre les éléments -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Colonne pour le TextBox -->
+            </Grid.ColumnDefinitions>
+
+            <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Parametre</TextBlock>
+
+            <!-- Espace entre les éléments -->
+            <Border Width="10" Grid.Column="1"/>
+
+            <TextBox x:Name="inputSearch" TextWrapping="Wrap" HorizontalAlignment="Right" Width="120" Grid.Column="2"/>
+        </Grid>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="20" Margin="0 50 0 0">Rechercher</Button>
+
+        <Grid  x:Name="mainGrid" Margin="0,120,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+                
+                 <!--Parametre Login -->
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Login</TextBlock>
+                    <TextBox x:Name="inputLogin"/>
+                </StackPanel>
+
+            <!--Parametre Password -->
+
+            <StackPanel Grid.Column="1">
+                <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Password</TextBlock>
+                <TextBox x:Name="inputPassword"/>
+            </StackPanel>
+                
+            <!--Parametre Picture -->
+
+            <StackPanel Grid.Column="2" Height="auto">
+                <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Picture</TextBlock>
+                <Button Click="btnUploadImg">Changer</Button>
+                <Image x:Name="votreImageControl" Width="100" Height="100" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Height="auto">
+                <Button Click="BtnModify_Click">Enregister</Button>
+                <Button Click="BtnDisconnected_Click" >Déconnecter</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+    
+</Page>

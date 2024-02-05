@@ -123,6 +123,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewModels\Pages\AdminViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewModels\Pages\SettingViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewModels\Pages\HomeViewModel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +148,12 @@
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="ViewModels\Pages\AdminViewModel.xaml.cs">
+      <DependentUpon>AdminViewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Pages\SettingViewModel.xaml.cs">
+      <DependentUpon>SettingViewModel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\Pages\HomeViewModel.xaml.cs">
       <DependentUpon>HomeViewModel.xaml</DependentUpon>
     </Compile>
@@ -184,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bdd\" />
+    <Folder Include="Img\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

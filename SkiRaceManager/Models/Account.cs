@@ -10,6 +10,7 @@ namespace SkiRaceManager.Models
     {
         public static int Id { get; set; }
         public static string Login { get; set; }
+        public static string Password { get; set; }
         public static string ProfilePicture { get; set; }
         public static string Rank { get; set; }
     }

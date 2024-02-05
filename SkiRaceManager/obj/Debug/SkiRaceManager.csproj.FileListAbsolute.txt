@@ -88,8 +88,10 @@ E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\bin\Debug\System.Numerics.Vectors.xm
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\HomeViewModel.g.cs
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\Main.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\Participation.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\HomeViewModel.baml
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\Main.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\Participation.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\AdminViewModel.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\SettingViewModel.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\AdminViewModel.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\SettingViewModel.baml

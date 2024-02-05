@@ -58,7 +58,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                 </Border>
                 </Button>
                 <!-- BTN MODERATION IF ADMIN -->
-                <Button x:Name="btnModeration" Click="btnParticipation_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Visibility="Hidden">
+                <Button x:Name="btnModeration" Click="btnAdmin_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Visibility="Visible">
                     <Border CornerRadius="10" BorderThickness="5" Background="#39393D" >
                         <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
                             <materialDesign:PackIcon Kind="Shield"  Margin="0 0 5 0" Width="30" Height="Auto"/>
@@ -68,7 +68,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                 </Button>
             </StackPanel>
             <!-- BTN SETTINGS -->
-            <Button x:Name="btnSettings"  Grid.Row="2" Click="btnParticipation_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+            <Button x:Name="btnSettings"  Grid.Row="2" Click="btnSetting_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
                     <Border CornerRadius="10" BorderThickness="5" Background="#39393D" >
                         <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
                             <materialDesign:PackIcon Kind="Cog"  Margin="0 0 5 0" Width="30" Height="Auto"/>

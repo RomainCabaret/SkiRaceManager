@@ -41,5 +41,15 @@ namespace SkiRaceManager
         {
             homeFrame.Navigate(new Participation());
         }
+
+        private void btnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            homeFrame.Navigate(new AdminViewModel());
+        }
+
+        private void btnSetting_Click(object sender, RoutedEventArgs e)
+        {
+            homeFrame.Navigate(new SettingViewModel());
+        }
     }
 }
