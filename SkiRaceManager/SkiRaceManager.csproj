@@ -118,12 +118,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Accounts.cs" />
+    <Compile Include="Models\Slope.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Page Include="Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewModels\Pages\AddSlope.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewModels\Pages\ModifyAcount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewModels\Pages\AdminViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewModels\Pages\AddAcount.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -148,8 +162,17 @@
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="ViewModels\Pages\AddSlope.xaml.cs">
+      <DependentUpon>AddSlope.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Pages\ModifyAcount.xaml.cs">
+      <DependentUpon>ModifyAcount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\Pages\AdminViewModel.xaml.cs">
       <DependentUpon>AdminViewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Pages\AddAcount.xaml.cs">
+      <DependentUpon>AddAcount.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Pages\SettingViewModel.xaml.cs">
       <DependentUpon>SettingViewModel.xaml</DependentUpon>

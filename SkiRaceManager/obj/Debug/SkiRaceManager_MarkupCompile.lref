@@ -6,4 +6,7 @@ FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\MainWindow.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\ViewModels\Pages\Participation.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\ViewModels\Pages\AdminViewModel.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\ViewModels\Pages\SettingViewModel.xaml;;
+FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\ViewModels\Pages\AddAcount.xaml;;
+FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\ViewModels\Pages\ModifyAcount.xaml;;
+FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\ViewModels\Pages\AddSlope.xaml;;
 

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\App.xaml
-61493747507
+9-250814429
 
-13-138484597
+18-2014962358
 36-1937973188
-Home.xaml;ViewModels\Pages\AdminViewModel.xaml;ViewModels\Pages\SettingViewModel.xaml;ViewModels\Pages\HomeViewModel.xaml;MainWindow.xaml;ViewModels\Pages\Participation.xaml;
+Home.xaml;ViewModels\Pages\AddSlope.xaml;ViewModels\Pages\ModifyAcount.xaml;ViewModels\Pages\AdminViewModel.xaml;ViewModels\Pages\AddAcount.xaml;ViewModels\Pages\SettingViewModel.xaml;ViewModels\Pages\HomeViewModel.xaml;MainWindow.xaml;ViewModels\Pages\Participation.xaml;
 
 False
 

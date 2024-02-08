@@ -95,3 +95,9 @@ E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\AdminView
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\SettingViewModel.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\AdminViewModel.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\SettingViewModel.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\AddAcount.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\AddAcount.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\ModifyAcount.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\ModifyAcount.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\AddSlope.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\ViewModels\Pages\AddSlope.baml

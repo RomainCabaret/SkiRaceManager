@@ -13,7 +13,6 @@ FontFamily="{DynamicResource MaterialDesignFont}"
    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
    xmlns:local="clr-namespace:SkiRaceManager"
    mc:Ignorable="d" d:DesignHeight="223.584">
-
     <Grid Margin="20">
         <Grid VerticalAlignment="Top" Height="50">
             <Grid.ColumnDefinitions>
