@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\
+C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\obj\Debug\
 SkiRaceManager
 none
 false
 DEBUG;TRACE
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\App.xaml
-9-250814429
+C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\App.xaml
+101691289267
 
-18-2014962358
-36-1937973188
-Home.xaml;ViewModels\Pages\AddSlope.xaml;ViewModels\Pages\ModifyAcount.xaml;ViewModels\Pages\AdminViewModel.xaml;ViewModels\Pages\AddAcount.xaml;ViewModels\Pages\SettingViewModel.xaml;ViewModels\Pages\HomeViewModel.xaml;MainWindow.xaml;ViewModels\Pages\Participation.xaml;
+19-191573994
+36-311004516
+Home.xaml;ViewModels\Pages\AddSlope.xaml;ViewModels\Pages\ModifySlope.xaml;ViewModels\Pages\ModifyAcount.xaml;ViewModels\Pages\AdminViewModel.xaml;ViewModels\Pages\AddAcount.xaml;ViewModels\Pages\SettingViewModel.xaml;ViewModels\Pages\HomeViewModel.xaml;MainWindow.xaml;ViewModels\Pages\Participation.xaml;
 
 False
 

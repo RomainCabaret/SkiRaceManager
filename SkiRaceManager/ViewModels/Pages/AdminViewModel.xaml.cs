@@ -140,6 +140,16 @@ namespace SkiRaceManager.ViewModels.Pages
             }
         }
 
-        
+        private void Slope_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Slope selectedSlopes = (Slope)SlopeListView.SelectedItem;
+            if(selectedSlopes != null)
+            {
+                NavigationService.Navigate(new ModifySlope(selectedSlopes.SlopeID, selectedSlopes.Name, selectedSlopes.Color, selectedSlopes.Image));
+            }
+        }
+
+
+
     }
 }

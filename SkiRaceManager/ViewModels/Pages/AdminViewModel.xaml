@@ -74,7 +74,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                         </StackPanel>
                     </Border>
                 </Button>
-                <ListView x:Name="SlopeListView" ItemsSource="{Binding slopes}" HorizontalAlignment="Center" Width="507" Margin="10,98,0,32">
+                <ListView x:Name="SlopeListView" ItemsSource="{Binding slopes}" HorizontalAlignment="Center" Width="507" Margin="10,98,0,32" MouseDoubleClick="Slope_MouseDoubleClick">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Id" DisplayMemberBinding="{Binding SlopeID}" />
@@ -86,7 +86,6 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                 </ListView>
             </StackPanel>
         </Grid>
-        
     </Grid>
 
     

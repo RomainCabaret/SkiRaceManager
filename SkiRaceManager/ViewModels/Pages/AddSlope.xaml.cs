@@ -1,7 +1,9 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Win32;
+using MySql.Data.MySqlClient;
 using SkiRaceManager.ViewModels.Pages;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,11 +27,12 @@ namespace SkiRaceManager
         public AddSlope()
         {
             InitializeComponent();
+            comboBoxColors.SelectedIndex = 0;
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            string query = "INSERT INTO `account` (`login`, `password`, `profilePicture`, `rank`) VALUES (@login, @password, @profilePicture, @rank);";
+            string query = "INSERT INTO `slope` (`name`, `color`, `image`) VALUES (@name, @color, @image);";
 
             MySqlConnection connection = DbContext.CreateConnexion();
             connection.Open();
@@ -37,10 +40,9 @@ namespace SkiRaceManager
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
                 // Ajouter les paramètres avec leurs valeurs
-                command.Parameters.AddWithValue("@login", inputLogin.Text);
-                command.Parameters.AddWithValue("@password", inputPassword.Text);
-                command.Parameters.AddWithValue("@profilePicture", "aa.jpg");
-                command.Parameters.AddWithValue("@rank", comboBoxRank.Text);
+                command.Parameters.AddWithValue("@name", inputName.Text);
+                command.Parameters.AddWithValue("@color", comboBoxColors.Text);
+                command.Parameters.AddWithValue("@image", "aa.jpg");
 
 
                 // Exécuter la requête
@@ -57,7 +59,58 @@ namespace SkiRaceManager
                     MessageBox.Show("l'insertion a échoué");
                 }
             }
+        }
+        private void btnUploadImg(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Fichiers image (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|Tous les fichiers (*.*)|*.*";
 
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string cheminImage = openFileDialog.FileName;
+
+                string nomImage = System.IO.Path.GetFileName(cheminImage);
+                string cheminCompletDestination = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", nomImage);
+
+                try
+                {
+                    File.Copy(cheminImage, cheminCompletDestination, true);
+
+                    ChargerImage(cheminCompletDestination);
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show($"Une erreur s'est produite lors de l'enregistrement de l'image : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (File.Exists(cheminCompletDestination))
+                    {
+                        Uri uri = new Uri(cheminCompletDestination);
+                        ImageSource source = new BitmapImage(uri);
+                        votreImageControl.Source = source;
+                    }
+                }
+            }
+        }
+
+        private void ChargerImage(string cheminCompletDestination)
+        {
+            try
+            {
+                if (File.Exists(cheminCompletDestination))
+                {
+                    Uri uri = new Uri(cheminCompletDestination);
+                    ImageSource source = new BitmapImage(uri);
+                    votreImageControl.Source = source;
+
+                }
+                else
+                {
+                    MessageBox.Show($"L'image {cheminCompletDestination} n'a pas pu être chargée dans le répertoire de destination.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Une erreur s'est produite lors du chargement ou de la copie de l'image : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

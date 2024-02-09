@@ -1,4 +1,4 @@
-﻿<Page x:Class="SkiRaceManager.AddSlope"
+﻿<Page x:Class="SkiRaceManager.ModifySlope"
                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 TextElement.Foreground="{DynamicResource MaterialDesignBody}"
 TextElement.FontWeight="Regular"
@@ -14,25 +14,27 @@ FontFamily="{DynamicResource MaterialDesignFont}"
    xmlns:local="clr-namespace:SkiRaceManager"
    mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddSlope">
+      Title="ModifySlope">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" Margin="0 20 0 0">
             <StackPanel>
-                <TextBlock FontSize="40">Ajouter une pistes</TextBlock>
-                <TextBlock FontSize="20" Margin="0 20 0 0">Nom de la pistes</TextBlock>
+                <TextBlock FontSize="40">Modifier une Pistes</TextBlock>
+                <TextBlock FontSize="20" Margin="0 20 0 0">Nom de la piste</TextBlock>
                 <TextBox x:Name="inputName"></TextBox>
-                <TextBlock FontSize="20">Couleur de la piste</TextBlock>
+                <TextBlock FontSize="20">Couleurs</TextBlock>
                 <ComboBox x:Name="comboBoxColors">
-                    <ComboBoxItem>blue</ComboBoxItem>
-                    <ComboBoxItem>red</ComboBoxItem>
+                    <ComboBoxItem Content="blue"/>
+                    <ComboBoxItem Content="red"/>
                 </ComboBox>
                 <TextBlock FontSize="20">Picture</TextBlock>
-                <Button Click="btnUploadImg">IMAGE</Button>
-                <Image x:Name="votreImageControl" Width="100" Height="100" />
+                <Button>IMAGE</Button>
             </StackPanel>
 
-            <Button Margin="0 30 0 0" Click="BtnAdd_Click">Crée une nouvelle piste</Button>
+            <StackPanel Margin="0 30 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Click="BtnUpdate_Click" Margin="1">Modifier la piste</Button>
+                <Button Click="BtnDelete_Click" Margin="1">Supprimer la piste</Button>
+            </StackPanel>
 
         </StackPanel>
     </Grid>

@@ -129,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ViewModels\Pages\ModifySlope.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewModels\Pages\ModifyAcount.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -164,6 +168,9 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="ViewModels\Pages\AddSlope.xaml.cs">
       <DependentUpon>AddSlope.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Pages\ModifySlope.xaml.cs">
+      <DependentUpon>ModifySlope.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Pages\ModifyAcount.xaml.cs">
       <DependentUpon>ModifyAcount.xaml</DependentUpon>

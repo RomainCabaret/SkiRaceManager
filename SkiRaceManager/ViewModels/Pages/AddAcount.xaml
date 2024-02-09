@@ -30,7 +30,8 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                     <ComboBoxItem>user</ComboBoxItem>
                 </ComboBox>
                 <TextBlock FontSize="20">Picture</TextBlock>
-                <Button>IMAGE</Button>
+                <Button Click="btnUploadImg">IMAGE</Button>
+                <Image x:Name="votreImageControl" Width="100" Height="100" />
             </StackPanel>
 
             <Button Margin="0 30 0 0" Click="BtnAdd_Click">Crée le compte</Button>
