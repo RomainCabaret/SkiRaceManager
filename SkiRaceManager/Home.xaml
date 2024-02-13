@@ -20,7 +20,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Frame Grid.Column="1" Name="homeFrame" Source="./ViewModels/Pages/HomeViewModel.xaml" NavigationUIVisibility="Hidden"></Frame>
+        <Frame Grid.Column="1" Name="homeFrame" Source="./Views/Pages/HomeViewModel.xaml" NavigationUIVisibility="Hidden"></Frame>
         <Grid Grid.Column="0" Background="#2C2D30">
             <Grid.RowDefinitions>
                 <!-- NAV GRID -->

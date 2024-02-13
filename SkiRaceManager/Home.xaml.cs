@@ -21,7 +21,7 @@ namespace SkiRaceManager
     /// </summary>
     public partial class Home : Window
     {
-        private static string rank = Account.Rank;
+        private static string rank = Session.Rank;
         public Home()
         {
             InitializeComponent();

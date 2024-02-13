@@ -120,36 +120,38 @@
     </ApplicationDefinition>
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\Slope.cs" />
+    <Compile Include="ViewModels\ColorViewModel.cs" />
+    <Compile Include="ViewModels\ImageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Page Include="Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewModels\Pages\AddSlope.xaml">
+    <Page Include="Views\Pages\Add\AddSlope.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModels\Pages\ModifySlope.xaml">
+    <Page Include="Views\Pages\Modify\ModifySlope.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModels\Pages\ModifyAcount.xaml">
+    <Page Include="Views\Pages\Modify\ModifyAcount.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModels\Pages\AdminViewModel.xaml">
+    <Page Include="Views\Pages\AdminViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModels\Pages\AddAcount.xaml">
+    <Page Include="Views\Pages\Add\AddAcount.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModels\Pages\SettingViewModel.xaml">
+    <Page Include="Views\Pages\SettingViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModels\Pages\HomeViewModel.xaml">
+    <Page Include="Views\Pages\HomeViewModel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,39 +167,41 @@
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account.cs" />
-    <Compile Include="ViewModels\Pages\AddSlope.xaml.cs">
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="ViewModels\RankViewModel.cs" />
+    <Compile Include="ViewModels\SlopeViewModel.cs" />
+    <Compile Include="Views\Pages\Add\AddSlope.xaml.cs">
       <DependentUpon>AddSlope.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Pages\ModifySlope.xaml.cs">
+    <Compile Include="Views\Pages\Modify\ModifySlope.xaml.cs">
       <DependentUpon>ModifySlope.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Pages\ModifyAcount.xaml.cs">
+    <Compile Include="Views\Pages\Modify\ModifyAcount.xaml.cs">
       <DependentUpon>ModifyAcount.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Pages\AdminViewModel.xaml.cs">
+    <Compile Include="Views\Pages\AdminViewModel.xaml.cs">
       <DependentUpon>AdminViewModel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Pages\AddAcount.xaml.cs">
+    <Compile Include="Views\Pages\Add\AddAcount.xaml.cs">
       <DependentUpon>AddAcount.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Pages\SettingViewModel.xaml.cs">
+    <Compile Include="Views\Pages\SettingViewModel.xaml.cs">
       <DependentUpon>SettingViewModel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Pages\HomeViewModel.xaml.cs">
+    <Compile Include="Views\Pages\HomeViewModel.xaml.cs">
       <DependentUpon>HomeViewModel.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ViewModels\Pages\Participation.xaml">
+    <Page Include="Views\Pages\Participation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewModels\Pages\Participation.xaml.cs">
+    <Compile Include="Views\Pages\Participation.xaml.cs">
       <DependentUpon>Participation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -229,7 +233,6 @@
   <ItemGroup>
     <Folder Include="bdd\" />
     <Folder Include="Img\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />

@@ -28,11 +28,11 @@ namespace SkiRaceManager.ViewModels
                 {
                     if (reader.Read())
                     {
-                        Account.Id = int.Parse(reader["id"].ToString());
-                        Account.Login = reader["login"].ToString();
-                        Account.Password = reader["password"].ToString();
-                        Account.ProfilePicture = reader["profilePicture"].ToString();
-                        Account.Rank = reader["rank"].ToString();
+                        Session.Id = int.Parse(reader["id"].ToString());
+                        Session.Login = reader["login"].ToString();
+                        Session.Password = reader["password"].ToString();
+                        Session.ProfilePicture = reader["profilePicture"].ToString();
+                        Session.Rank = reader["rank"].ToString();
                         return true;
                     }
                     else
