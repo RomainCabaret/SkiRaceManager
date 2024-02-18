@@ -39,7 +39,7 @@ namespace SkiRaceManager
 
         private void btnParticipation_Click(object sender, RoutedEventArgs e)
         {
-            homeFrame.Navigate(new Participation());
+            homeFrame.Navigate(new ViewParticipation());
         }
 
         private void btnAdmin_Click(object sender, RoutedEventArgs e)

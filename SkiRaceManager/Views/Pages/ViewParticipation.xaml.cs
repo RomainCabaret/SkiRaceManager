@@ -18,9 +18,9 @@ namespace SkiRaceManager
     /// <summary>
     /// Logique d'interaction pour Participation.xaml
     /// </summary>
-    public partial class Participation : Page
+    public partial class ViewParticipation : Page
     {
-        public Participation()
+        public ViewParticipation()
         {
             InitializeComponent();
         }

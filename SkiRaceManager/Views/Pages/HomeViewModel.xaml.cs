@@ -1,4 +1,5 @@
 ﻿using SkiRaceManager.Models;
+using SkiRaceManager.Views.Pages.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -98,10 +99,7 @@ namespace SkiRaceManager.ViewModels.Pages
                 button.SetBinding(Button.WidthProperty, bindingBtn);
                 button.Click += (sender, e) =>
                 {
-                    // Naviguer vers la nouvelle page
-                    //NavigationService?.Navigate(new Uri("InformationsSlopePage.xaml", UriKind.Relative));
-                    MessageBox.Show($"{slope.Name}");
-
+                    NavigationService.Navigate(new ViewSlope(slope.SlopeID, slope.Name, slope.Image));
                 };
 
                 // Ajouter le TextBlock et l'Image au conteneur

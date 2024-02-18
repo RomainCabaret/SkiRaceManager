@@ -1,6 +1,7 @@
 ﻿
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\App.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Home.xaml;;
+FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\Add\AddParticipation.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\Add\AddSlope.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\Modify\ModifySlope.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\Modify\ModifyAcount.xaml;;
@@ -9,5 +10,6 @@ FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\Add\AddAcount.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\SettingViewModel.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\HomeViewModel.xaml;;
 FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\MainWindow.xaml;;
-FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\Participation.xaml;;
+FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\ViewParticipation.xaml;;
+FE:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\Views\Pages\View\ViewSlope.xaml;;
 

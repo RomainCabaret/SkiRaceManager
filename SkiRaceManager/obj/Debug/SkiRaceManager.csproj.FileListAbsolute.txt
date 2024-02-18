@@ -21,7 +21,6 @@ E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\bin\Debug\MaterialDesignThemes.Wpf.p
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\bin\Debug\MaterialDesignThemes.Wpf.xml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\bin\Debug\Microsoft.Xaml.Behaviors.xml
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\SkiRaceManager.csproj.CopyComplete
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\App.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Home.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Home.baml
@@ -137,7 +136,6 @@ E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\AdminViewModel
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddAcount.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\SettingViewModel.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\HomeViewModel.g.cs
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Participation.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddSlope.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Modify\ModifySlope.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Modify\ModifyAcount.baml
@@ -145,4 +143,11 @@ E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\AdminViewModel
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddAcount.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\SettingViewModel.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\HomeViewModel.baml
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Participation.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\SkiRaceM.AA92970D.Up2Date
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\View\ViewSlope.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\View\ViewSlope.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\ViewParticipation.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\ViewParticipation.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddParticipation.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddParticipation.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\GeneratedInternalTypeHelper.g.cs

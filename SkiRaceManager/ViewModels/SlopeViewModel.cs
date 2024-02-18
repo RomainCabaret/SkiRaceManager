@@ -48,5 +48,45 @@ namespace SkiRaceManager.ViewModels
 
             return slopes;
         }
+
+        public static ObservableCollection<Participation> GetParticipations(int slopeID)
+        {
+            ObservableCollection<Participation> participations = new ObservableCollection<Participation>();
+
+            string query = "SELECT a.profilePicture, a.login, p.time, P.date FROM `participations` p INNER JOIN account a ON p.accountid = a.id WHERE p.`slopeid` = @id ORDER BY p.time";
+            MySqlConnection connection = DbContext.CreateConnexion();
+
+
+            MySqlCommand command = new MySqlCommand(query, connection);
+            try
+            {
+                connection.Open();
+                command.Parameters.AddWithValue("@id", slopeID);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    // Parcourir les lignes de données
+                    while (reader.Read())
+                    {
+                        // Récupérer les valeurs des colonnes de la ligne actuelle
+                        string picturePath = reader["profilePicture"].ToString();
+                        string accountLogin = reader["login"].ToString();
+                        string time = reader["time"].ToString();
+                        string date = reader["date"].ToString();
+
+                        Participation participation = new Participation { AccountLogin = accountLogin, AccountPicture = picturePath, Time = TimeSpan.Parse(time), ReleaseDate = Convert.ToDateTime(date) };
+                        participations.Add(participation);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Erreur : " + ex.Message);
+            }
+
+
+            return participations;
+        }
     }
 }
