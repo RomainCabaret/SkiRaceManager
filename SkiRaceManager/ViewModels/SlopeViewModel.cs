@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Mysqlx.Notice.Frame.Types;
 
 namespace SkiRaceManager.ViewModels
 {
@@ -15,7 +16,7 @@ namespace SkiRaceManager.ViewModels
         {
             ObservableCollection<Slope> slopes = new ObservableCollection<Slope>();
 
-            string query = "SELECT * FROM `slope`";
+            string query = "SELECT s.*, COUNT(p.time) AS runCount FROM `slope` s LEFT JOIN participations p ON s.id = p.slopeid GROUP BY s.id";
             MySqlConnection connection = DbContext.CreateConnexion();
 
 
@@ -33,8 +34,9 @@ namespace SkiRaceManager.ViewModels
                         string name = reader["name"].ToString();
                         string color = reader["color"].ToString();
                         string img = reader["image"].ToString();
+                        int runCount = int.Parse(reader["runCount"].ToString());
 
-                        Slope slope = new Slope { SlopeID = id, Name = name, Color = color, Image = img };
+                        Slope slope = new Slope { SlopeID = id, Name = name, Color = color, Image = img, RunCount = runCount};
                         slopes.Add(slope);
                     }
                 }
@@ -87,6 +89,48 @@ namespace SkiRaceManager.ViewModels
 
 
             return participations;
+        }
+        public static ObservableCollection<Slope> SearchSlopes(string search, string slopeColor)
+        {
+            ObservableCollection<Slope> slopes = new ObservableCollection<Slope>();
+
+            string query = "SELECT s.*, COUNT(p.time) AS runCount FROM `slope` s LEFT JOIN participations p ON s.id = p.slopeid WHERE name LIKE @slopeName AND (color = @color OR @color = '') GROUP BY s.id";
+            MySqlConnection connection = DbContext.CreateConnexion();
+
+
+            MySqlCommand command = new MySqlCommand(query, connection);
+            try
+            {
+                connection.Open();
+                command.Parameters.AddWithValue("@slopeName", "%" + search + "%");
+                command.Parameters.AddWithValue("@color", slopeColor);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    // Parcourir les lignes de données
+                    while (reader.Read())
+                    {
+                        // Récupérer les valeurs des colonnes de la ligne actuelle
+                        int id = int.Parse(reader["id"].ToString());
+                        string name = reader["name"].ToString();
+                        string color = reader["color"].ToString();
+                        string img = reader["image"].ToString();
+                        int runCount = int.Parse(reader["runCount"].ToString());
+
+
+                        Slope slope = new Slope { SlopeID = id, Name = name, Color = color, Image = img, RunCount = runCount};
+                        slopes.Add(slope);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Erreur : " + ex.Message);
+            }
+
+            return slopes;
         }
     }
 }

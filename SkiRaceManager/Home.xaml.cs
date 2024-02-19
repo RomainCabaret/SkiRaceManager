@@ -25,6 +25,7 @@ namespace SkiRaceManager
         public Home()
         {
             InitializeComponent();
+            rank = Session.Rank;
             if(rank.ToLower() == "admin")
             {
                 btnModeration.Visibility = Visibility.Visible;

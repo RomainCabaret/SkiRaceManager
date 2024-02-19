@@ -101,10 +101,10 @@ namespace SkiRaceManager
                 {
                     if(Session.Id == currentID)
                     {
-                        Session.Login = inputLogin.Text;
-                        Session.Password = inputPassword.Text;
-                        Session.ProfilePicture = profilePictureName;
-                        Session.Rank = comboBoxRank.Text;
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        Window.GetWindow(this).Close();
+                        return;
                     }
                     
                     NavigationService.Navigate(new AdminViewModel());

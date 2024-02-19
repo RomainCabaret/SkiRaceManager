@@ -43,11 +43,6 @@ namespace SkiRaceManager.Views.Pages.View
 
             ParticipationListView.ItemsSource = participations;
 
-            MessageBox.Show(ParticipationListView.ToString());
-            foreach (var item in ParticipationListView.Items)
-            {
-                Console.WriteLine(item.ToString());
-            }
         }
 
         private void ParticipationListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)

@@ -58,7 +58,13 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                             <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
                             <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Login }" />
                             <GridViewColumn Header="Password" DisplayMemberBinding="{Binding Password }" />
-                            <GridViewColumn Header="Photo" DisplayMemberBinding="{Binding ProfilePicture }" />
+                            <GridViewColumn Header="Photo de profile">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding AccountPictureFullPath}" Height="50" Width="50"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                             <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Rank }" />
                         </GridView>
                     </ListView.View>
@@ -80,7 +86,13 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                             <GridViewColumn Header="Id" DisplayMemberBinding="{Binding SlopeID}" />
                             <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Name }" />
                             <GridViewColumn Header="Couleur" DisplayMemberBinding="{Binding Color }" />
-                            <GridViewColumn Header="Image" DisplayMemberBinding="{Binding Image }" />
+                            <GridViewColumn Header="Image">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding SlopePictureFullPath}" Height="50" Width="50"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

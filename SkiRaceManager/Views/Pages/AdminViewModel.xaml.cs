@@ -27,6 +27,7 @@ namespace SkiRaceManager.ViewModels.Pages
     {
         public AdminViewModel()
         {
+          
             InitializeComponent();
 
             // RECUPERE

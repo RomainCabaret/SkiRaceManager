@@ -29,7 +29,9 @@ FontFamily="{DynamicResource MaterialDesignFont}"
 
             <!-- Espace entre les éléments -->
             <Border Width="10" Grid.Column="1"/>
-
+            <ComboBox x:Name="comboBoxColors" Grid.Column="2" Margin="0 0 120 0" Height="20">
+                <!--COLORS AU SEINS DE LA BDD-->
+            </ComboBox>
             <TextBox x:Name="inputSearch" TextWrapping="Wrap" HorizontalAlignment="Right" Width="120" Grid.Column="2"/>
         </Grid>
         <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="20" Margin="0 50 0 0" Click="btnSearch">Rechercher</Button>

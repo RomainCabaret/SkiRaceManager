@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace SkiRaceManager.ViewModels.Pages
 {
@@ -29,6 +30,21 @@ namespace SkiRaceManager.ViewModels.Pages
             InitializeComponent();
             slopes = SlopeViewModel.GetAllSlope();
             FillContainersToGrid();
+
+            List<string> colors = ColorViewModel.GetAllColors();
+
+            // box par default 
+            ComboBoxItem itemDefault = new ComboBoxItem();
+            itemDefault.Content = "--";
+            comboBoxColors.Items.Add(itemDefault);
+
+            foreach (var element in colors)
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = element;
+                comboBoxColors.Items.Add(item);
+            }
+            comboBoxColors.SelectedIndex = 0;
 
         }
         private void FillContainersToGrid()
@@ -50,7 +66,6 @@ namespace SkiRaceManager.ViewModels.Pages
             }
 
             int numberOfRows = (int)Math.Ceiling((double)slopes.Count() / numberOfColumns);
-
             foreach (Slope slope in slopes)
             {
                 Border container = new Border();
@@ -82,13 +97,14 @@ namespace SkiRaceManager.ViewModels.Pages
                 TextBlock textBlockParticipation = new TextBlock();
                 textBlockParticipation.Text = $"Couleur : {slope.Color}";
                 textBlockParticipation.FontSize = 15;
-                textBlockParticipation.Foreground = Brushes.White;
+                textBlockParticipation.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(slope.Color)); // Utilisez la couleur de la piste
 
 
-                TextBlock textBlockBestTime = new TextBlock();
-                textBlockBestTime.Text = $"Meilleurs temps : {"2:00:11"}";
-                textBlockBestTime.FontSize = 15;
-                textBlockBestTime.Foreground = Brushes.White;
+
+                TextBlock textBlockParticipationCount = new TextBlock();
+                textBlockParticipationCount.Text = $"Nombre de participation : {slope.RunCount}";
+                textBlockParticipationCount.FontSize = 15;
+                textBlockParticipationCount.Foreground = Brushes.White;
 
                 Button button = new Button();
                 button.Background = new SolidColorBrush(Color.FromRgb(50, 230, 183));
@@ -108,7 +124,7 @@ namespace SkiRaceManager.ViewModels.Pages
                 stackPanel.Children.Add(image); // Ajouter l'image en premier
                 stackPanel.Children.Add(textBlock); // Ajouter le TextBlock après
                 stackPanel.Children.Add(textBlockParticipation);
-                stackPanel.Children.Add(textBlockBestTime);
+                stackPanel.Children.Add(textBlockParticipationCount);
                 stackPanel.Children.Add(button);
 
 
@@ -149,6 +165,12 @@ namespace SkiRaceManager.ViewModels.Pages
         {
             try
             {
+                string slopeColor = comboBoxColors.Text;
+                if(comboBoxColors.SelectedIndex == 0)
+                {
+                    slopeColor = "";
+                }
+                slopes = SlopeViewModel.SearchSlopes(inputSearch.Text, slopeColor);
                 FillContainersToGrid();
 
             }
