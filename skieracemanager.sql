@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 31, 2024 at 07:37 PM
+-- Generation Time: Feb 26, 2024 at 09:28 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -28,10 +28,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `account` (
+  `id` int NOT NULL,
   `login` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `rank` varchar(20) NOT NULL
+  `rank` varchar(20) NOT NULL,
+  `profilePicture` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`id`, `login`, `password`, `rank`, `profilePicture`) VALUES
+(1, 'aa', 'aa', 'admin', 'aaa.png'),
+(5, 'bla', 'bla', 'user', 'github-removebg-preview.png'),
+(7, 'XD', 'XD', 'admin', 'bg.png'),
+(9, 'ouba', 'ouba', 'admin', 'default.png'),
+(10, 'mama', 'mama', 'admin', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -42,6 +55,48 @@ CREATE TABLE `account` (
 CREATE TABLE `color` (
   `color` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `color`
+--
+
+INSERT INTO `color` (`color`) VALUES
+('black'),
+('blue'),
+('orange'),
+('red');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `participations`
+--
+
+CREATE TABLE `participations` (
+  `id` int NOT NULL,
+  `slopeid` int NOT NULL,
+  `accountid` int NOT NULL,
+  `time` time(1) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `participations`
+--
+
+INSERT INTO `participations` (`id`, `slopeid`, `accountid`, `time`, `date`) VALUES
+(1, 1, 1, '05:28:16.2', '2024-02-18'),
+(2, 1, 1, '05:28:16.0', '2024-02-18'),
+(3, 1, 5, '05:28:16.2', '2024-02-18'),
+(4, 1, 1, '01:28:16.0', '2024-02-18'),
+(5, 1, 5, '00:28:16.0', '2024-02-18'),
+(6, 3, 1, '00:57:56.2', '2024-02-18'),
+(7, 1, 1, '00:01:16.0', '2024-02-18'),
+(8, 1, 1, '00:00:16.0', '2024-02-18'),
+(9, 1, 1, '00:00:05.0', '2024-02-18'),
+(10, 1, 1, '00:00:04.0', '2024-02-18'),
+(11, 1, 1, '18:04:03.1', '2024-02-19'),
+(13, 1, 10, '00:00:02.0', '2024-02-20');
 
 -- --------------------------------------------------------
 
@@ -59,7 +114,6 @@ CREATE TABLE `rank` (
 
 INSERT INTO `rank` (`rank`) VALUES
 ('admin'),
-('mod'),
 ('user');
 
 -- --------------------------------------------------------
@@ -76,6 +130,16 @@ CREATE TABLE `slope` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Dumping data for table `slope`
+--
+
+INSERT INTO `slope` (`id`, `name`, `color`, `image`) VALUES
+(1, 'bb', 'blue', 'aaa.png'),
+(2, 'aa', 'red', 'calendrier-de-l-ann-e-de-terminale-2023-2024-157746.jpg'),
+(3, 'La valle des morts vivant', 'black', 'image 9.png'),
+(4, 'babayaga', 'black', '2023-01-06 22_17_20-Window.png');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -83,7 +147,7 @@ CREATE TABLE `slope` (
 -- Indexes for table `account`
 --
 ALTER TABLE `account`
-  ADD PRIMARY KEY (`login`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `rank` (`rank`);
 
 --
@@ -91,6 +155,14 @@ ALTER TABLE `account`
 --
 ALTER TABLE `color`
   ADD PRIMARY KEY (`color`);
+
+--
+-- Indexes for table `participations`
+--
+ALTER TABLE `participations`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `slopeid` (`slopeid`),
+  ADD KEY `accountid` (`accountid`);
 
 --
 -- Indexes for table `rank`
@@ -106,6 +178,28 @@ ALTER TABLE `slope`
   ADD KEY `color` (`color`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `participations`
+--
+ALTER TABLE `participations`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `slope`
+--
+ALTER TABLE `slope`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -114,6 +208,13 @@ ALTER TABLE `slope`
 --
 ALTER TABLE `account`
   ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`rank`) REFERENCES `rank` (`rank`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `participations`
+--
+ALTER TABLE `participations`
+  ADD CONSTRAINT `participations_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `participations_ibfk_2` FOREIGN KEY (`slopeid`) REFERENCES `slope` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `slope`

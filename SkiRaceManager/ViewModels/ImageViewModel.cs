@@ -14,38 +14,36 @@ namespace SkiRaceManager.ViewModels
 {
     internal class ImageViewModel
     {
-        //private void btnUploadImg(object sender, EventArgs e)
-        //{
-        //    OpenFileDialog openFileDialog = new OpenFileDialog();
-        //    openFileDialog.Filter = "Fichiers image (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|Tous les fichiers (*.*)|*.*";
+        private void btnUploadImg(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Fichiers image (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|Tous les fichiers (*.*)|*.*";
 
-        //    if (openFileDialog.ShowDialog() == true)
-        //    {
-        //        string cheminImage = openFileDialog.FileName;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string cheminImage = openFileDialog.FileName;
 
-        //        string nomImage = Path.GetFileName(cheminImage);
-        //        string cheminCompletDestination = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", nomImage);
+                string nomImage = Path.GetFileName(cheminImage);
+                string cheminCompletDestination = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", nomImage);
 
-        //        try
-        //        {
-        //            File.Copy(cheminImage, cheminCompletDestination, true);
+                try
+                {
+                    File.Copy(cheminImage, cheminCompletDestination, true);
 
-        //            ChargerImage(cheminCompletDestination);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            //MessageBox.Show($"Une erreur s'est produite lors de l'enregistrement de l'image : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-        //            if (File.Exists(cheminCompletDestination))
-        //            {
-        //                Uri uri = new Uri(cheminCompletDestination);
-        //                ImageSource source = new BitmapImage(uri);
-        //                votreImageControl.Source = source;
-        //            }
-        //        }
-        //    }
-        //}
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show($"Une erreur s'est produite lors de l'enregistrement de l'image : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (File.Exists(cheminCompletDestination))
+                    {
+                        Uri uri = new Uri(cheminCompletDestination);
+                        ImageSource source = new BitmapImage(uri);
+                    }
+                }
+            }
+        }
 
-        public static void ChargerImage(string cheminCompletDestination, Image imgControl)
+        public static void ChargerImage(string cheminCompletDestination, Image imgControl) 
         {
             try
             {
@@ -54,7 +52,6 @@ namespace SkiRaceManager.ViewModels
                     Uri uri = new Uri(cheminCompletDestination);
                     ImageSource source = new BitmapImage(uri);
                     imgControl.Source = source;
-
                 }
                 else
                 {
