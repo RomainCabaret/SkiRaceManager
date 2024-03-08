@@ -16,20 +16,25 @@
         Title="MainWindow" Height="450" Width="400">
     <Grid>
         <StackPanel HorizontalAlignment="Center" Width="200">
+            <!--LOGIN-->
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 20 0 0">
+                <StackPanel Orientation="Horizontal" >
+                    <materialDesign:PackIcon Kind="Home" Margin="0 0 5 0" Width="30" Height="Auto"/>
+                    <Label Content="Login" Foreground="White"/>
+                </StackPanel>
+                <TextBox x:Name="inputLogin" TextWrapping="Wrap" Width="120" Padding="4"/>
+            </StackPanel>
+            <!--PASSWORD-->
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <StackPanel Orientation="Horizontal" >
-                <materialDesign:PackIcon Kind="Home" Margin="0 0 5 0" Width="30" Height="Auto"/>
-            <Label Content="Label"/>
-                    
+                    <materialDesign:PackIcon Kind="Password" Margin="0 0 5 0" Width="30" Height="Auto"/>
+                    <Label Content="Password" Foreground="White"/>
                 </StackPanel>
+                <PasswordBox x:Name="inputPassword" Width="120" Padding="4"/>
+            </StackPanel>
 
-                <TextBox x:Name="inputLogin" TextWrapping="Wrap" Width="120"/>
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Home" Margin="0 0 5 0" Width="30" Height="Auto"/>
-                <PasswordBox x:Name="inputPassword" Width="120"/>
-            </StackPanel>
-            <Button Content="Button" Click="Button_Click"/>
+        
+            <Button Content="Connexion" Click="Button_Click" Margin="0 20 0 0" Padding="10"/>
 
 
         </StackPanel>

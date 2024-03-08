@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\
+C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\obj\Debug\
 SkiRaceManager
 none
 false
 DEBUG;TRACE
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\App.xaml
-12-1816703348
+C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\App.xaml
+131854987147
 
-32-1241061998
-41652397045
-Home.xaml;Views\Pages\Add\AddParticipation.xaml;Views\Pages\Add\AddSlope.xaml;Views\Pages\Modify\ModifySlope.xaml;Views\Pages\Modify\ModifyAcount.xaml;Views\Pages\AdminViewModel.xaml;Views\Pages\Add\AddAcount.xaml;Views\Pages\SettingViewModel.xaml;Views\Pages\HomeViewModel.xaml;MainWindow.xaml;Views\Pages\ViewParticipation.xaml;Views\Pages\View\ViewSlope.xaml;
+35-1774936068
+412022798381
+Home.xaml;Views\Pages\Add\AddParticipation.xaml;Views\Pages\Add\AddSlope.xaml;Views\Pages\Modify\ModifySlope.xaml;Views\Pages\Modify\ModifyAcount.xaml;Views\Pages\AdminViewModel.xaml;Views\Pages\Add\AddAcount.xaml;Views\Pages\RequestViewModel.xaml;Views\Pages\SettingViewModel.xaml;Views\Pages\HomeViewModel.xaml;MainWindow.xaml;Views\Pages\ViewParticipation.xaml;Views\Pages\View\ViewSlope.xaml;
 
 True
 

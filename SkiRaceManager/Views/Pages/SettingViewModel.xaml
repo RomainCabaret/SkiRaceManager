@@ -29,9 +29,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
             <!-- Espace entre les éléments -->
             <Border Width="10" Grid.Column="1"/>
 
-            <TextBox x:Name="inputSearch" TextWrapping="Wrap" HorizontalAlignment="Right" Width="120" Grid.Column="2"/>
         </Grid>
-        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="20" Margin="0 50 0 0">Rechercher</Button>
 
         <Grid  x:Name="mainGrid" Margin="0,120,0,0">
             <Grid.ColumnDefinitions>
@@ -48,21 +46,21 @@ FontFamily="{DynamicResource MaterialDesignFont}"
 
                 <StackPanel Grid.Column="0">
                     <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Login</TextBlock>
-                    <TextBox x:Name="inputLogin"/>
+                <TextBox x:Name="inputLogin" Padding="5"/>
                 </StackPanel>
 
             <!--Parametre Password -->
 
             <StackPanel Grid.Column="1">
                 <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Password</TextBlock>
-                <TextBox x:Name="inputPassword"/>
+                <TextBox x:Name="inputPassword" Padding="5"/>
             </StackPanel>
                 
             <!--Parametre Picture -->
 
             <StackPanel Grid.Column="2" Height="auto">
                 <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Picture</TextBlock>
-                <Button Click="btnUploadImg">Changer</Button>
+                <Button Click="btnUploadImg" Padding="5">Changer</Button>
                 <Image x:Name="votreImageControl" Width="100" Height="100" />
             </StackPanel>
 

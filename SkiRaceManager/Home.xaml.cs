@@ -1,5 +1,6 @@
 ﻿using SkiRaceManager.Models;
 using SkiRaceManager.ViewModels.Pages;
+using SkiRaceManager.Views.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,10 @@ namespace SkiRaceManager
             if(rank.ToLower() == "admin")
             {
                 btnModeration.Visibility = Visibility.Visible;
+                btnRequest.Visibility = Visibility.Visible;
+            } else if(rank.ToLower() == "gestionnaire")
+            {
+                btnRequest.Visibility = Visibility.Visible;
             }
         }
 
@@ -43,6 +48,10 @@ namespace SkiRaceManager
             homeFrame.Navigate(new ViewParticipation());
         }
 
+        private void btnRequest_Click(object sender, RoutedEventArgs e)
+        {
+            homeFrame.Navigate(new RequestViewModel());
+        }
         private void btnAdmin_Click(object sender, RoutedEventArgs e)
         {
             homeFrame.Navigate(new AdminViewModel());

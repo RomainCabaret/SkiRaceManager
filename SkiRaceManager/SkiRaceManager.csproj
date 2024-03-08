@@ -133,6 +133,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Request.cs" />
+    <Compile Include="ViewModels\RequestViewModel.cs" />
+    <Compile Include="Views\Pages\RequestViewModel.xaml.cs">
+      <DependentUpon>RequestViewModel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\View\DateFormatConverter.cs" />
     <Compile Include="Views\Pages\View\RankToColorConverter.cs" />
     <Compile Include="Views\Pages\View\RowNumberConverter.cs" />
@@ -177,6 +182,10 @@
     <Page Include="Views\Pages\Add\AddAcount.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\RequestViewModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\SettingViewModel.xaml">
       <Generator>MSBuild:Compile</Generator>

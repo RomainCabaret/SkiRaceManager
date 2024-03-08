@@ -39,7 +39,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                         </StackPanel>
                     </Border>
                 </Button>
-                <!-- BTN PARTICIPATION -->
+                 <!--BTN PARTICIPATION--> 
                 <Button x:Name="btnParticipation" Click="btnParticipation_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
                     <Border CornerRadius="10" BorderThickness="5" Background="#39393D" >
                         <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
@@ -48,12 +48,12 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                         </StackPanel>
                     </Border>
                 </Button>
-                <!-- BTN STATISTIQUE -->
-                <Button x:Name="btnStatistique" Click="btnParticipation_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+                 <!--BTN REQUETE--> 
+                <Button x:Name="btnRequest" Click="btnRequest_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Visibility="Hidden">
                 <Border CornerRadius="10" BorderThickness="5" Background="#39393D" >
                     <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <materialDesign:PackIcon Kind="GoogleAnalytics"  Margin="0 0 5 0" Width="30" Height="Auto"/>
-                        <TextBlock FontSize="24">Statistique</TextBlock>
+                        <TextBlock FontSize="24">Demande</TextBlock>
                     </StackPanel>
                 </Border>
                 </Button>
