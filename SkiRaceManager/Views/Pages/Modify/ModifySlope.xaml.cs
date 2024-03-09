@@ -5,6 +5,7 @@ using SkiRaceManager.ViewModels;
 using SkiRaceManager.ViewModels.Pages;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,10 @@ namespace SkiRaceManager
         public ModifySlope(int id, string name, string color, string picture)
         {
             InitializeComponent();
+
+            ObservableCollection<Accounts> accounts = AccountViewModel.GetAllGestionnaire();
+            AccountListView.ItemsSource = accounts;
+
             this.currentID = id;
             inputName.Text = name;
             comboBoxColors.Text = color;

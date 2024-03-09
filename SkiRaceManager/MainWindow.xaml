@@ -13,30 +13,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkiRaceManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
+        Title="MainWindow" Height="450" Width="400" ResizeMode="NoResize">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" Width="200">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label FontSize="30" Foreground="White" Margin="0 30 0 0" Grid.ColumnSpan="3" HorizontalAlignment="Center">SkiRaceManager</Label>
+        <StackPanel HorizontalAlignment="Center" Grid.Column="1">
             <!--LOGIN-->
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 20 0 0">
-                <StackPanel Orientation="Horizontal" >
-                    <materialDesign:PackIcon Kind="Home" Margin="0 0 5 0" Width="30" Height="Auto"/>
-                    <Label Content="Login" Foreground="White"/>
-                </StackPanel>
-                <TextBox x:Name="inputLogin" TextWrapping="Wrap" Width="120" Padding="4"/>
-            </StackPanel>
+            <Label FontSize="15" Foreground="White" Margin="0 100 0 0">Nom d'utilisateur :</Label>
+            <TextBox x:Name="inputLogin" TextWrapping="Wrap" Padding="4" Margin="0 0 0 20" />
             <!--PASSWORD-->
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <StackPanel Orientation="Horizontal" >
-                    <materialDesign:PackIcon Kind="Password" Margin="0 0 5 0" Width="30" Height="Auto"/>
-                    <Label Content="Password" Foreground="White"/>
-                </StackPanel>
-                <PasswordBox x:Name="inputPassword" Width="120" Padding="4"/>
-            </StackPanel>
-
-        
-            <Button Content="Connexion" Click="Button_Click" Margin="0 20 0 0" Padding="10"/>
-
-
+            <Label FontSize="15" Foreground="White">Mot de passe :</Label>
+            <PasswordBox x:Name="inputPassword" Padding="4" Margin="0 0 0 0"/>
+            <!--BUTTON-->
+            <Button Content="Connexion" Click="Button_Click" Margin="0 40 0 0" Padding="10" Background="#32E6B7" FontWeight="Bold"/>
         </StackPanel>
 
     </Grid>

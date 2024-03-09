@@ -1,4 +1,5 @@
-﻿using SkiRaceManager.ViewModels;
+﻿using SkiRaceManager.Models;
+using SkiRaceManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,5 +49,6 @@ namespace SkiRaceManager
                 MessageBox.Show("La base de données semble avoir un probleme");
             }
         }
+
     }
 }

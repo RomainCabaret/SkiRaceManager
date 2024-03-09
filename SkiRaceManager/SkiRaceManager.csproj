@@ -134,7 +134,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Request.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\RequestViewModel.cs" />
+    <Compile Include="Views\Pages\Add\AddGestionnaire.xaml.cs">
+      <DependentUpon>AddGestionnaire.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\RequestViewModel.xaml.cs">
       <DependentUpon>RequestViewModel.xaml</DependentUpon>
     </Compile>
@@ -156,6 +160,10 @@
       <DependentUpon>ViewSlope.xaml</DependentUpon>
     </Compile>
     <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Add\AddGestionnaire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

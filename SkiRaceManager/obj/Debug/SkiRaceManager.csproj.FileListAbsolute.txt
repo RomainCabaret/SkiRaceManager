@@ -194,3 +194,5 @@ C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\V
 C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\obj\Debug\SkiRaceM.AA92970D.Up2Date
 C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewModel.g.cs
 C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewModel.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewModel.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewModel.baml

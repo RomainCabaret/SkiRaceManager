@@ -19,6 +19,11 @@ namespace SkiRaceManager.Models
         {
             get { return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", ProfilePicture); }
         }
+
+        public override string ToString()
+        {
+            return $"{Id} - {Login} - {Rank}";
+        }
     }
 
 }
