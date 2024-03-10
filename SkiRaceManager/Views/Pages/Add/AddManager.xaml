@@ -1,4 +1,4 @@
-﻿<Page x:Class="SkiRaceManager.Views.Pages.Add.AddGestionnaire"
+﻿<Page x:Class="SkiRaceManager.Views.Pages.Add.AddManager"
 TextElement.Foreground="{DynamicResource MaterialDesignBody}"
 TextElement.FontWeight="Regular"
 TextElement.FontSize="13"
@@ -16,6 +16,17 @@ FontFamily="{DynamicResource MaterialDesignFont}"
       Title="AddGestionnaire">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center" Margin="0 20 0 0">
+            <StackPanel>
+                <TextBlock FontSize="40">Ajouter un Responsable de piste</TextBlock>
+                <ComboBox x:Name="comboManager">
+
+                </ComboBox>
+            </StackPanel>
+
+            <Button Margin="0 30 0 0" Click="BtnAdd_Click">Ajouter le responsable</Button>
+
+        </StackPanel>
+     
     </Grid>
 </Page>

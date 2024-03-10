@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SkiRaceManager.Models
 {
-    internal class Slope
+    public class Slope
     {
         public int SlopeID { get; set; }
         public string Name { get; set; }

@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using SkiRaceManager.Models;
 using SkiRaceManager.ViewModels;
 using SkiRaceManager.ViewModels.Pages;
+using SkiRaceManager.Views.Pages.Add;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,11 +31,15 @@ namespace SkiRaceManager
         private int currentID {  get; set; }
         private string profilePictureName { get; set; }
 
+        private Slope slope { get; set; }
+
         public ModifySlope(int id, string name, string color, string picture)
         {
             InitializeComponent();
 
-            ObservableCollection<Accounts> accounts = AccountViewModel.GetAllGestionnaire();
+            slope = new Slope { SlopeID = id, Name = name, Color = color, Image = picture};
+
+            ObservableCollection<Accounts> accounts = ManagerViewModel.GetManagerSlope(slope.SlopeID);
             AccountListView.ItemsSource = accounts;
 
             this.currentID = id;
@@ -183,6 +188,10 @@ namespace SkiRaceManager
             {
                 MessageBox.Show($"Une erreur s'est produite lors du chargement ou de la copie de l'image : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        private void BtnAddResponsable(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new AddManager(slope));
         }
     }
 }

@@ -50,5 +50,6 @@ namespace SkiRaceManager.ViewModels
 
             return accounts;
         }
+
     }
 }

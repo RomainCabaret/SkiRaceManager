@@ -196,3 +196,5 @@ C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\R
 C:\Users\IA91\source\repos\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewModel.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewModel.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewModel.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddManager.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddManager.baml

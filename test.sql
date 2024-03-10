@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 08, 2024 at 10:03 AM
+-- Generation Time: Mar 10, 2024 at 08:48 PM
 -- Server version: 8.0.30
--- PHP Version: 8.2.6
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,7 @@ INSERT INTO `account` (`id`, `login`, `password`, `rank`, `profilePicture`) VALU
 (5, 'bla', 'bla', 'gestionnaire', 'github-removebg-preview.png'),
 (7, 'XD', 'XD', 'admin', 'bg.png'),
 (9, 'ouba', 'ouba', 'admin', 'default.png'),
-(10, 'mama', 'mama', 'admin', 'default.png');
+(10, 'mama', 'mama', 'user', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -65,6 +65,27 @@ INSERT INTO `color` (`color`) VALUES
 ('blue'),
 ('orange'),
 ('red');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `manager`
+--
+
+CREATE TABLE `manager` (
+  `slopeID` int NOT NULL,
+  `accountID` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `manager`
+--
+
+INSERT INTO `manager` (`slopeID`, `accountID`) VALUES
+(1, 1),
+(1, 5),
+(1, 7),
+(1, 9);
 
 -- --------------------------------------------------------
 
@@ -116,25 +137,6 @@ INSERT INTO `rank` (`rank`) VALUES
 ('admin'),
 ('gestionnaire'),
 ('user');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `reponsable`
---
-
-CREATE TABLE `reponsable` (
-  `slopeID` int NOT NULL,
-  `accountID` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `reponsable`
---
-
-INSERT INTO `reponsable` (`slopeID`, `accountID`) VALUES
-(3, 1),
-(2, 5);
 
 -- --------------------------------------------------------
 
@@ -198,6 +200,14 @@ ALTER TABLE `color`
   ADD PRIMARY KEY (`color`);
 
 --
+-- Indexes for table `manager`
+--
+ALTER TABLE `manager`
+  ADD PRIMARY KEY (`slopeID`,`accountID`),
+  ADD KEY `slopeID` (`slopeID`,`accountID`),
+  ADD KEY `accountID` (`accountID`);
+
+--
 -- Indexes for table `participations`
 --
 ALTER TABLE `participations`
@@ -210,14 +220,6 @@ ALTER TABLE `participations`
 --
 ALTER TABLE `rank`
   ADD PRIMARY KEY (`rank`);
-
---
--- Indexes for table `reponsable`
---
-ALTER TABLE `reponsable`
-  ADD PRIMARY KEY (`slopeID`,`accountID`),
-  ADD KEY `slopeID` (`slopeID`,`accountID`),
-  ADD KEY `accountID` (`accountID`);
 
 --
 -- Indexes for table `request`
@@ -273,18 +275,18 @@ ALTER TABLE `account`
   ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`rank`) REFERENCES `rank` (`rank`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `manager`
+--
+ALTER TABLE `manager`
+  ADD CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`slopeID`) REFERENCES `slope` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `manager_ibfk_2` FOREIGN KEY (`accountID`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `participations`
 --
 ALTER TABLE `participations`
   ADD CONSTRAINT `participations_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `participations_ibfk_2` FOREIGN KEY (`slopeid`) REFERENCES `slope` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `reponsable`
---
-ALTER TABLE `reponsable`
-  ADD CONSTRAINT `reponsable_ibfk_1` FOREIGN KEY (`slopeID`) REFERENCES `slope` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `reponsable_ibfk_2` FOREIGN KEY (`accountID`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `request`
