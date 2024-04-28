@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace SkiRaceManager.Models
 {
@@ -19,6 +20,11 @@ namespace SkiRaceManager.Models
         public string SlopePictureFullPath
         {
             get { return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", Image); }
+        }
+
+        public override string ToString()
+        {
+            return $"{SlopeID} - {Name} - {Color}";
         }
     }
 }

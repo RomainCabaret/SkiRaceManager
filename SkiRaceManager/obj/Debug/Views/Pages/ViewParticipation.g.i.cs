@@ -41,7 +41,7 @@ namespace SkiRaceManager {
     /// <summary>
     /// ViewParticipation
     /// </summary>
-    public partial class ViewParticipation : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector {
+    public partial class ViewGestionnaire : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector {
         
         private bool _contentLoaded;
         

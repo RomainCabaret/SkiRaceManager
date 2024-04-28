@@ -10,8 +10,8 @@ namespace SkiRaceManager.Models
     internal class Request
     {
         public int Id { get; set; }
-        public string AccountID { get; set; }
-        public string SlopeID { get; set; }
+        public int AccountID { get; set; }
+        public int SlopeID { get; set; }
 
         public string AccountName { get; set; }
         public string SlopeName { get; set; }

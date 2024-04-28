@@ -1,4 +1,4 @@
-﻿<Page x:Class="SkiRaceManager.ViewParticipation"
+﻿<Page x:Class="SkiRaceManager.Views.Pages.Add.AddDemande"
                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 TextElement.Foreground="{DynamicResource MaterialDesignBody}"
 TextElement.FontWeight="Regular"
@@ -14,11 +14,20 @@ FontFamily="{DynamicResource MaterialDesignFont}"
    xmlns:local="clr-namespace:SkiRaceManager"
    mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Participation">
+      Title="AddAcount">
 
     <Grid>
-        <materialDesign:Card Padding="32" Margin="335,223,10,10">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
-        </materialDesign:Card>
+        <StackPanel HorizontalAlignment="Center" Margin="0 20 0 0">
+            <StackPanel>
+                <TextBlock FontSize="40">Ajouter une demande</TextBlock>
+                <TextBlock FontSize="20">Piste</TextBlock>
+                <ComboBox x:Name="comboBoxRank">
+                    <!--RANK AU SEINS DE LA BDD-->
+                </ComboBox>
+            </StackPanel>
+
+            <Button Margin="0 30 0 0" Click="BtnAdd_Click">Ajouter ma demande</Button>
+
+        </StackPanel>
     </Grid>
 </Page>

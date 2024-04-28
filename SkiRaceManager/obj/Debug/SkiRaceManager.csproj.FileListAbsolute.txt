@@ -129,8 +129,6 @@ E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\HomeViewModel.
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\SkiRaceM.AA92970D.Up2Date
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\View\ViewSlope.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\View\ViewSlope.baml
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\ViewParticipation.g.cs
-E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\ViewParticipation.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddParticipation.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddParticipation.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -198,3 +196,9 @@ E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewMod
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\RequestViewModel.baml
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddManager.g.cs
 E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddManager.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddRequest.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddRequest.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\ViewGestionnaire.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\ViewGestionnaire.baml
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddDemande.g.cs
+E:\dev\cs\WPF\SkiRaceManager\SkiRaceManager\obj\Debug\Views\Pages\Add\AddDemande.baml

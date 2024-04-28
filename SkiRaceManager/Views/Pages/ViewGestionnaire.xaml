@@ -1,4 +1,4 @@
-﻿<Page x:Class="SkiRaceManager.Views.Pages.RequestViewModel"
+﻿<Page x:Class="SkiRaceManager.ViewGestionnaire"
                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 TextElement.Foreground="{DynamicResource MaterialDesignBody}"
 TextElement.FontWeight="Regular"
@@ -14,7 +14,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
    xmlns:local="clr-namespace:SkiRaceManager"
    mc:Ignorable="d" d:DesignHeight="223.584">
 
-    
+
     <Grid Margin="20">
         <Grid.Resources>
             <local:DateFormatConverter x:Key="DateFormatConverter"/>
@@ -29,7 +29,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                 <!-- Colonne pour le TextBox -->
             </Grid.ColumnDefinitions>
 
-            <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Vos demandes</TextBlock>
+            <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center">Menu gestionnaire</TextBlock>
 
             <!-- Espace entre les éléments -->
             <Border Width="10" Grid.Column="1"/>
@@ -44,19 +44,14 @@ FontFamily="{DynamicResource MaterialDesignFont}"
 
                 <!-- BTN SETTINGS -->
 
-                <Button x:Name="btnSettings"  Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Click="btnAddAccount_Click">
-                    <Border CornerRadius="10" BorderThickness="5" Background="#39393D" >
-                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
-                            <materialDesign:PackIcon Kind="Cog"  Margin="0 0 5 0" Width="30" Height="Auto"/>
-                            <TextBlock FontSize="24">Ajouter une demande</TextBlock>
-                        </StackPanel>
-                    </Border>
-                </Button>
-                <ListView x:Name="RequestListView" ItemsSource="{Binding requests}" HorizontalAlignment="Center"  Margin="0,98,10,32" MouseDoubleClick="Account_MouseDoubleClick">
+            
+                <ListView x:Name="RequestListView" ItemsSource="{Binding requests}" HorizontalAlignment="Center"  Margin="0,98,10,32" MouseDoubleClick="RequestListView_MouseDoubleClick">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
                             <GridViewColumn Header="Piste" DisplayMemberBinding="{Binding SlopeName }" />
+                            <GridViewColumn Header="Demandeurs" DisplayMemberBinding="{Binding AccountName }" />
+
                             <!--<GridViewColumn Header="Date de la demande" DisplayMemberBinding="{Binding DateDemande }" />-->
                             <GridViewColumn Header="Date de publication">
                                 <GridViewColumn.CellTemplate>

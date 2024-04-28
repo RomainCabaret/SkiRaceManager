@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using SkiRaceManager.Models;
-using SkiRaceManager.Views.Pages.Add;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,16 +15,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Mysqlx.Notice.Frame.Types;
 
-namespace SkiRaceManager.Views.Pages
+namespace SkiRaceManager
 {
     /// <summary>
-    /// Logique d'interaction pour RequestViewModel.xaml
+    /// Logique d'interaction pour Participation.xaml
     /// </summary>
-    public partial class RequestViewModel : Page
+    public partial class ViewGestionnaire : Page
     {
-        public RequestViewModel()
+        public ViewGestionnaire()
         {
             InitializeComponent();
             ObservableCollection<Request> requests = GetAllRequests();
@@ -35,7 +33,7 @@ namespace SkiRaceManager.Views.Pages
         {
             ObservableCollection<Request> requests = new ObservableCollection<Request>();
 
-            string query = "SELECT r.*, s.name FROM `request` r INNER JOIN slope s ON r.slopeID = s.id WHERE r.`accountID` = @id";
+            string query = "SELECT r.*, s.name, a.login FROM `request` r INNER JOIN slope s ON r.slopeID = s.id INNER JOIN account a ON r.accountID = a.id WHERE `r`.`slopeID` IN (SELECT m.slopeID FROM `manager` m WHERE m.accountID = @id)";
             MySqlConnection connection = DbContext.CreateConnexion();
 
 
@@ -53,10 +51,12 @@ namespace SkiRaceManager.Views.Pages
                         int id = int.Parse(reader["id"].ToString());
                         int slopeID = int.Parse(reader["slopeID"].ToString());
                         string slopeName = reader["name"].ToString();
+                        string accountName = reader["login"].ToString();
+
                         DateTime dateRequete = Convert.ToDateTime(reader["dateDemande"]);
                         bool isTraite = Convert.ToBoolean(reader["isTraite"]);
 
-                        Request request = new Request { Id = id, AccountID = Session.Id, SlopeID = slopeID, SlopeName = slopeName, DateDemande = dateRequete, IsTraite = isTraite};
+                        Request request = new Request { Id = id, AccountID = Session.Id, SlopeID = slopeID, SlopeName = slopeName, AccountName = accountName, DateDemande = dateRequete, IsTraite = isTraite };
                         requests.Add(request);
                     }
                 }
@@ -108,9 +108,11 @@ namespace SkiRaceManager.Views.Pages
             return slopes;
         }
 
+
+
         private void btnAddAccount_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddDemande());
+            NavigationService.Navigate(new AddAcount());
         }
 
         private void btnAddSlope_Click(object sender, RoutedEventArgs e)
@@ -136,6 +138,15 @@ namespace SkiRaceManager.Views.Pages
             //{
             //    NavigationService.Navigate(new ModifySlope(selectedSlopes.SlopeID, selectedSlopes.Name, selectedSlopes.Color, selectedSlopes.Image));
             //}
+        }
+
+        private void RequestListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Request selectedRequest = (Request)RequestListView.SelectedItem;
+            if(selectedRequest != null)
+            {
+                NavigationService.Navigate(new AddRequest(selectedRequest.Id, selectedRequest.SlopeID, selectedRequest.SlopeName, selectedRequest.AccountID));
+            }
         }
     }
 }

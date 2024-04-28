@@ -1,5 +1,7 @@
-﻿using SkiRaceManager.Models;
+﻿using MySql.Data.MySqlClient;
+using SkiRaceManager.Models;
 using SkiRaceManager.ViewModels;
+using SkiRaceManager.ViewModels.Pages;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -51,8 +53,43 @@ namespace SkiRaceManager.Views.Pages.View
    
             if (selectedParticipant != null)
             {
-                MessageBox.Show(selectedParticipant.AccountPictureFullPath);
+                //MessageBox.Show(selectedParticipant.AccountPictureFullPath);
+                if(Session.Rank.ToLower() == "admin" || Session.Rank.ToLower() == "gestionnaire")
+                {
+                    MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet participation ?", "Confirmation de suppression", MessageBoxButton.YesNo);
+
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        string query = "DELETE FROM `participations` WHERE `participations`.`id` = @id;";
+
+                        MySqlConnection connection = DbContext.CreateConnexion();
+                        connection.Open();
+
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+                            // Ajouter le paramètre ID avec sa valeur
+                            command.Parameters.AddWithValue("@id", selectedParticipant.Id); // Assurez-vous de définir correctement currentID
+
+                            // Exécuter la requête
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            // Vérifier si des lignes ont été affectées pour confirmer la suppression
+                            if (rowsAffected > 0)
+                            {
+                               
+                                NavigationService.Navigate(new ViewSlope(SlopeID, SlopeName, SlopeImg));
+                            }
+                            else
+                            {
+                                // Aucune suppression effectuée (peut-être que l'ID n'a pas été trouvé)
+                                MessageBox.Show("La suppression a échoué.");
+                            }
+                        }
+                    }
+                }
             }
+            
         }
 
         private void btnAddParticipation(object sender, RoutedEventArgs e)

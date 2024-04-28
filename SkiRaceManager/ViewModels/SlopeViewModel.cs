@@ -55,7 +55,7 @@ namespace SkiRaceManager.ViewModels
         {
             ObservableCollection<Participation> participations = new ObservableCollection<Participation>();
 
-            string query = "SELECT a.profilePicture, a.login, p.time, P.date FROM `participations` p INNER JOIN account a ON p.accountid = a.id WHERE p.`slopeid` = @id ORDER BY p.time";
+            string query = "SELECT p.id, a.profilePicture, a.login, p.time, P.date FROM `participations` p INNER JOIN account a ON p.accountid = a.id WHERE p.`slopeid` = @id ORDER BY p.time";
             MySqlConnection connection = DbContext.CreateConnexion();
 
 
@@ -70,12 +70,13 @@ namespace SkiRaceManager.ViewModels
                     while (reader.Read())
                     {
                         // Récupérer les valeurs des colonnes de la ligne actuelle
+                        int id = int.Parse(reader["id"].ToString());
                         string picturePath = reader["profilePicture"].ToString();
                         string accountLogin = reader["login"].ToString();
                         string time = reader["time"].ToString();
                         string date = reader["date"].ToString();
 
-                        Participation participation = new Participation { AccountLogin = accountLogin, AccountPicture = picturePath, Time = TimeSpan.Parse(time), ReleaseDate = Convert.ToDateTime(date) };
+                        Participation participation = new Participation { Id = id, AccountLogin = accountLogin, AccountPicture = picturePath, Time = TimeSpan.Parse(time), ReleaseDate = Convert.ToDateTime(date) };
                         participations.Add(participation);
                     }
                 }

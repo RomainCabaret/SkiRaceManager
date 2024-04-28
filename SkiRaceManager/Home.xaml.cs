@@ -27,13 +27,15 @@ namespace SkiRaceManager
         {
             InitializeComponent();
             rank = Session.Rank;
-            if(rank.ToLower() == "admin")
+            if(rank.ToLower() == "gestionnaire")
             {
+                btnGestionnaire.Visibility = Visibility.Visible;
+                btnRequest.Visibility = Visibility.Visible;
+            } else if(rank.ToLower() == "admin")
+            {
+                btnGestionnaire.Visibility = Visibility.Visible;
+                btnRequest.Visibility = Visibility.Visible;
                 btnModeration.Visibility = Visibility.Visible;
-                btnRequest.Visibility = Visibility.Visible;
-            } else if(rank.ToLower() == "gestionnaire")
-            {
-                btnRequest.Visibility = Visibility.Visible;
             }
         }
 
@@ -43,9 +45,9 @@ namespace SkiRaceManager
             homeFrame.Navigate(new HomeViewModel());
         }
 
-        private void btnParticipation_Click(object sender, RoutedEventArgs e)
+        private void btnGestionnaire_Click(object sender, RoutedEventArgs e)
         {
-            homeFrame.Navigate(new ViewParticipation());
+            homeFrame.Navigate(new ViewGestionnaire());
         }
 
         private void btnRequest_Click(object sender, RoutedEventArgs e)
